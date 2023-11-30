@@ -36,7 +36,8 @@ public:
             return 0.0;
         }
 
-        double taxAmount = 0.15 * income;
+        double IncomeTax = 0.15 * income;
+        double taxAmount = IncomeTax - (0.10 * totalDeductions);
 
         return taxAmount;
     }
@@ -89,7 +90,7 @@ int main() {
 
     double taxAmount = taxCalc.calculateTaxRecursive();
 
-    cout << setw(20) << left << "Net Income:" << setw(10) << right << "$" << taxAmount << endl;
+    cout << setw(20) << left << "Tax Amount:" << setw(10) << right << "$" << taxAmount << endl;
 
     // Ask the user if they want to calculate another tax
     cout << "\nWould you like to calculate another tax? (y/n): ";
@@ -103,4 +104,3 @@ int main() {
 
 return 0;
 }
-
